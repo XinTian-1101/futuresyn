@@ -76,8 +76,7 @@
   -webkit-appearance: none; /* Remove the native arrow for Webkit browsers */
   -moz-appearance: none; /* Remove the native arrow for Firefox */
   appearance: none; /* Remove the native arrow */
-  background: url("/public/Images/drop_down_arrow.png") no-repeat right 2em
-    center; /* Adjust the right position as needed */
+
   background-color: #fffbf4;
   background-size: 0.9em; /* Adjust the size of the arrow as needed */
 }
@@ -104,8 +103,7 @@
   -webkit-appearance: none; /* Remove the native arrow for Webkit browsers */
   -moz-appearance: none; /* Remove the native arrow for Firefox */
   appearance: none; /* Remove the native arrow */
-  background: url("/public/Images/drop_down_arrow.png") no-repeat right 2em
-    center; /* Adjust the right position as needed */
+
   background-color: #fffbf4;
   background-size: 0.9em; /* Adjust the size of the arrow as needed */
   outline: none;
@@ -129,8 +127,7 @@
   -webkit-appearance: none; /* Remove the native arrow for Webkit browsers */
   -moz-appearance: none; /* Remove the native arrow for Firefox */
   appearance: none; /* Remove the native arrow */
-  background: url("/public/Images/drop_down_arrow.png") no-repeat right 2em
-    center; /* Adjust the right position as needed */
+
   background-color: #fffbf4;
   background-size: 0.9em; /* Adjust the size of the arrow as needed */
 }
