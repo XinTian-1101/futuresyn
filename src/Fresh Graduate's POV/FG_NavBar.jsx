@@ -27,13 +27,21 @@ const FG_Navbar = () => {
   };
 
   return (
+
+    
     <div className="navbarContainer">
+
+      <div className = "ImageContainer">
+            <img src={Logo} alt="FutureSync Logo" width="250" height="150" />
+      </div>
+
       <nav className="navbar">
+
         <div className="navbar-brand">
-        <img src={Logo} alt="FutureSync Logo" width="300" height="200" />
-        </div>
-          <div className="navbar-links">
-            <ul className={`nav-item ${activeItem === "Learning & Project" ? "active" : ""}`}>
+
+          <div className = "MenuItem">
+            <div className="navbar-links">
+              <ul className={`nav-item ${activeItem === "Learning & Project" ? "active" : ""}`}>
                 <Link
                   className="nav-link"
                   to="/FG_LearningProject"
@@ -51,11 +59,15 @@ const FG_Navbar = () => {
                   Industry Trend
                 </Link>
               </ul>
-            </div>
+          
 
-            <div className="logout">
-              <button className="logout-button">Log Out</button>
+              <div className="logout">
+                <button className="logout-button">Log Out</button>
+              </div>   
+              
             </div>
+          </div>  
+        </div>  
       </nav>
     </div>
   );
