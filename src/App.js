@@ -13,6 +13,8 @@ import FG_Completed from "./Fresh_Graduates_POV/pages/FG_Completed";
 import InProgressProjectDetails from "./Fresh_Graduates_POV/components/FG_InProgressDetails";
 import InProgressUploadPage from "./Fresh_Graduates_POV/components/FG_Home_InProgressUpload";
 import CompletedProjectDetails from "./Fresh_Graduates_POV/components/FG_Home_CompleteProjectDetails";
+import EM_Home from "./Employer's POV/pages/EM_Home";
+import EM_AddForm from "./Employer's POV/pages/EM_AddForm";
 
 function App() {
   return (
@@ -28,12 +30,11 @@ function App() {
         <Route path="/FG_Completed" element={<FG_Completed />} />
         <Route path="/UploadProjectPage" element={< InProgressUploadPage/>} />
         <Route path="/CompletedProject/:id" element={< CompletedProjectDetails/>} />
+        <Route path="/EM_Home" element={<EM_Home />} />
+        <Route path="/EM_AddForm" element={<EM_AddForm />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
-
-
-

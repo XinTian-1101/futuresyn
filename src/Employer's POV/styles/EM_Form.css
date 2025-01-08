@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins";
+}
+
+#date {
+  width: 24em;
+}
+
+.pageMainContainer {
+  font-family: Poppins;
+  padding: 4em;
+  padding-top: 0.6em;
+}
+
+.pageMainTitle {
+  font-weight: 600;
+  font-size: 25px;
+  color: #002B63;
+}
+
+.pageSubTitle {
+  font-weight: 600;
+  font-size: 20px;
+  color: #002B63;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 75px;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 15px;
+}
+
+input {
+  width: 48em;
+}
+
+select {
+  width: 48em;
+}
+
+textarea {
+  width: 104em;
+}
+
+.righButtonContainer {
+  display: flex;
+  align-self: end;
+  margin-top: 2em;
+}
+
+.displayErrorMessage {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  /* Change to absolute */
+  top: calc(100% + 5px);
+  /* Position the error message right below the container */
+  left: 0;
+  /* Align the error message to the left of the container */
+  width: 100%;
+  /* Ensure the error message spans the full width of the container */
+  padding-left: 50px;
+}
