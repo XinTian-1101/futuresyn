@@ -3,3 +3,12 @@
 * {
   font-family: "Poppins";
 }
+
+.projectCardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
