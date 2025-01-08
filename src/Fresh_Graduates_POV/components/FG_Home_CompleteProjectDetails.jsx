@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { saveAs } from "file-saver";
 import "../styles/completed.css";
 
-import Certificate from "../Images/certificate.jpg"; 
+import Certificate from "../../Images/certificate.jpg"; 
 
 const completedDetails = [
   {
@@ -34,7 +34,7 @@ const FG_Home_CompleteProjectDetails = () => {
   };
 
   return (
-    <div className="details-container">
+    <div className="detai ls-container">
       <button className="back-button" onClick={() => window.history.back()}>
         ← Back
       </button>

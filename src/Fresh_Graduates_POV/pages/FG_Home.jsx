@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/FG_Home.css";
 import Cards from "../components/FG_Home_ProjectCards";
-import FGHomePhoto from "../Images/FGHomePhoto.png";
+import FGHomePhoto from "../../Images/FGHomePhoto.png";
 
 const FG_Home = () => {
   return (

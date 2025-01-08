@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/completed.css";
-import CompletedPhoto from "../Images/FGHomePhoto.png";
+import CompletedPhoto from "../../Images/FGHomePhoto.png";
 
 const completedTasks = [
   {
