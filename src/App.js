@@ -15,6 +15,7 @@ import InProgressUploadPage from "./Fresh_Graduates_POV/components/FG_Home_InPro
 import CompletedProjectDetails from "./Fresh_Graduates_POV/components/FG_Home_CompleteProjectDetails";
 import EM_Home from "./Employer's POV/pages/EM_Home";
 import EM_AddForm from "./Employer's POV/pages/EM_AddForm";
+import EM_ViewParticipants from "./Employer's POV/pages/EM_ViewParticipants";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/CompletedProject/:id" element={< CompletedProjectDetails/>} />
         <Route path="/EM_Home" element={<EM_Home />} />
         <Route path="/EM_AddForm" element={<EM_AddForm />} />
+        <Route path="/EM_ViewParticipants" element={<EM_ViewParticipants />} />
       </Routes>
     </Router>
   );

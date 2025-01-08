@@ -7,44 +7,55 @@ const EM_Home = () => {
 
     const [projectList, setProjectList] = useState([]);
 
-    let [openProjects, setOpenProjects] = useState([]);
-    let [progressProjects, setProgressProjects] = useState([]);
-    let [judgeProjects, setJudgeProjects] = useState([]);
-    let [certProjects, setCertProjects] = useState([]);
-    let [inactiveProjects, setInactiveProjects] = useState([]);
+    const [openProjects, setOpenProjects] = useState([]);
+    const [progressProjects, setProgressProjects] = useState([]);
+    const [judgeProjects, setJudgeProjects] = useState([]);
+    const [certProjects, setCertProjects] = useState([]);
+    const [inactiveProjects, setInactiveProjects] = useState([]);
+
+    // useEffect(() => {
+    //     const fetchProjects = async () => {
+    //         try {
+    //             const response = await axios.get("/api/employer/project/get");
+    //             setProjectList(response.data);
+    //         } catch (error) {
+    //             console.error("Error fetching projects:", error);
+    //         }
+    //     };
+    //     fetchProjects();
+    // }, []);
 
     useEffect(() => {
-        const fetchProjects = async () => {
-          try {
-            const response = await axios.get('/api/employer/project/get'); 
-            setProjectList(response.data);
-          } catch (error) {
-            console.error('Error fetching projects:', error);
-          }
-        };
-        fetchProjects();
-      }, []);
-    
-      useEffect(() => {
         groupProjects();
-      }, [projectList]);
-    
-      const groupProjects = () => {
-        const mappedProjectData = projectList.map(project => ({
-          projectId: property._id,
-          cardTitle1: `RM ${property.price} Per Month`,
-          cardTitle2: property.name,
-          cardText: property.address,
-          roomDetails: [property.bedroom, property.bathroom, `${property.buildUpSize}sf`],
-          propertyType: property.type,
-          location: property.location,
-          priceRange: determinePriceRange(property.price)
+    }, [projectList]);
+
+    const groupProjects = () => {
+        const groupProjectData = projectList.map((project) => ({
+            category: project.domain,
+            title: project.title,
+            description: project.description,
+            participants: `${project.noParticipants} Participants`,
+            status: project.status,
         }));
-        setCardData(mappedCardData);
-    
-        const uniqueLocations = [...new Set(projectList.map(property => property.location))];
-        setLocations(["All Location", ...uniqueLocations]);
-      };
+
+        setOpenProjects(groupProjectData.filter((p) => p.status === "OPEN"));
+        setProgressProjects(groupProjectData.filter((p) => p.status === "INPROGRESS"));
+        setJudgeProjects(groupProjectData.filter((p) => p.status === "JUDGING"));
+        setCertProjects(groupProjectData.filter((p) => p.status === "CERT"));
+        setInactiveProjects(groupProjectData.filter((p) => p.status === "INACTIVE"));
+    };
+
+    // useEffect(() => {
+    //     const fetchProjects = async () => {
+    //         try {
+    //             const response = await axios.get("/api/employer/project/get");
+    //             setProjectList(response.data);
+    //         } catch (error) {
+    //             console.error("Error fetching projects:", error);
+    //         }
+    //     };
+    //     fetchProjects();
+    // }, []);
 
     const cardsData = [
         {
@@ -83,21 +94,9 @@ const EM_Home = () => {
 
     const TabContent1 = () => (
         <div className="projectCardsContainer">
-            {cardsData.map((card, index) => {
-    return (
-        <ProjectCard
-            key={index}
-            category={card.category}
-            title={card.title}
-            description={card.description}
-            uploadedBy={card.uploadedBy}
-            participants={card.participants}
-        />
-    );
-})}
-
+            <ProjectCard projectData={cardsData[0]}/>
         </div>
-    );    
+    );
 
     const TabContent2 = () => (
         <div>
@@ -112,6 +111,14 @@ const EM_Home = () => {
             <p>This is the content of Tab 3, rendered as a React component.</p>
         </div>
     );
+
+    // const tabData = [
+    //     { title: "Enrollment Open", content: <TabContent1 /> },
+    //     { title: "In Progress", content: <TabContent2 /> },
+    //     { title: "Judging Required", content: <TabContent3 /> },
+    //     { title: "Certificates Pending", content: <TabContent4 /> },
+    //     { title: "Inactive", content: <TabContent5 /> },
+    // ];
 
     const tabData = [
         { title: "Tab 1", content: <TabContent1 /> },
