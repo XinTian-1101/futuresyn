@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import Logo from "../Images/Logo.png";
-import "../styles/Navbar.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Logo from "../../Images/Logo.png";
+
+import "../styles/FG_Narbar.css"
 
 const FG_Navbar = () => {
-  const location = useLocation();
-  const [activeItem, setActiveItem] = useState("Learning & Project");
 
+  const location = useLocation();
+  const [activeItem, setActiveItem] = useState("Learning & Project ");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  
   useEffect(() => {
     const determineActiveItem = () => {
       const path = location.pathname;
-      if (path === "/FG_IndustryTrend") {
+      if (path.includes("/FG_Home")) {
+        return "Learning & Project";
+      } else if (path.includes("/FG_IndustryTrend")) {
         return "Industry Trend";
-      } else if (path === "/FG_Home") {
-        return "Home";
+      } else {
+        return "";
       }
-      return "";
     };
 
     setActiveItem(determineActiveItem());
@@ -23,49 +27,54 @@ const FG_Navbar = () => {
 
   const handleItemClick = (itemName) => {
     setActiveItem(itemName);
+    setIsDropdownOpen(false);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
   };
 
   return (
+ 
     <div className="navbarContainer">
+
+      <div className = "ImageContainer">
+            <img src={Logo} alt="FutureSync Logo" width="200" height="125" />
+      </div>
+
       <nav className="navbar">
+
         <div className="navbar-brand">
-          <img src={Logo} alt="FutureSync Logo" width="150" height="130" />
-        </div>
-        <div className="navbar-links">
-          <ul className={`nav-item ${activeItem === "Home" ? "active" : ""}`}>
-            <Link
-              className="nav-link"
-              to="/FG_Home"
-              onClick={() => handleItemClick("Home")}
-            >
-              Home
-            </Link>
-          </ul>
 
-          <ul className={`nav-item ${activeItem === "Learning & Project" ? "active" : ""}`}>
-            <Link
-              className="nav-link"
-              to="/FG_LearningProject"
-              onClick={() => handleItemClick("Learning & Project")}
-            >
-              Learning & Project
-            </Link>
-          </ul>
+          <div className = "MenuItem">
+            <div className="navbar-links">
+              <ul className={`nav-item ${activeItem === "Learning & Project" ? "active" : ""}`}>
+                <Link
+                  className="nav-link"
+                  to="/FG_Home"
+                  onClick={() => handleItemClick("Learning & Project")}>
+                  Learning & Project
+                </Link>
+              </ul>
 
-          <ul className={`nav-item ${activeItem === "Industry Trend" ? "active" : ""}`}>
-            <Link
-              className="nav-link"
-              to="/FG_IndustryTrend"
-              onClick={() => handleItemClick("Industry Trend")}
-            >
-              Industry Trend
-            </Link>
-          </ul>
-        </div>
+              <ul
+                className={`nav-item ${activeItem === "Industry Trend" ? "active" : ""}`}>
+                <Link
+                  className="nav-link"
+                   to="/FG_IndustryTrend"
+                  onClick={() => handleItemClick("Industry Trend")}>
+                  Industry Trend
+                </Link>
+              </ul>
+          
 
-        <div className="logout">
-          <button className="logout-button">Log Out</button>
-        </div>
+              <div className="logout">
+                <button className="logout-button">Log Out</button>
+              </div>   
+              
+            </div>
+          </div>  
+        </div>  
       </nav>
     </div>
   );
