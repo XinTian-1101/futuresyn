@@ -4,9 +4,11 @@ import Logo from "../Images/Logo.png";
 import "../Fresh Graduate's POV/FG_Narbar.css"
 
 const FG_Navbar = () => {
+
   const location = useLocation();
   const [activeItem, setActiveItem] = useState("Learning & Project ");
-
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  
   useEffect(() => {
     const determineActiveItem = () => {
       const path = location.pathname;
@@ -24,15 +26,21 @@ const FG_Navbar = () => {
 
   const handleItemClick = (itemName) => {
     setActiveItem(itemName);
+    setIsDropdownOpen(false);
   };
 
-  return (
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
 
-    
+
+
+  return (
+ 
     <div className="navbarContainer">
 
       <div className = "ImageContainer">
-            <img src={Logo} alt="FutureSync Logo" width="250" height="150" />
+            <img src={Logo} alt="FutureSync Logo" width="200" height="125" />
       </div>
 
       <nav className="navbar">
