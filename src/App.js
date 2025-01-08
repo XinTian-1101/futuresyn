@@ -11,12 +11,10 @@ import FG_IndustryTrend from "./Fresh Graduate's POV/pages/FG_IndustryTrend";
 function App() {
   return (
     <Router>
-    
       <FG_Navbar />
 
       <Routes>
         <Route path="/FG_Home" element={<FG_Home />} />
-        <Route path="/FG_LearningProject" element={<FG_LearningProject />} />
         <Route path="/FG_IndustryTrend" element={<FG_IndustryTrend />} />
       </Routes>
     </Router>
