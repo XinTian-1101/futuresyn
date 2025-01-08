@@ -3,15 +3,15 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import FG_Navbar from "./Fresh Graduate's POV/FG_NavBar";
-import FG_Home from "./Fresh Graduate's POV/FG_Home";
-import FG_LearningProject from "./Fresh Graduate's POV/FG_LearningProject";
-import FG_IndustryTrend from "./Fresh Graduate's POV/FG_IndustryTrend";
+import FG_Navbar from "./Fresh Graduate's POV/components/FG_NavBar";
+import FG_Home from "./Fresh Graduate's POV/pages/FG_Home";
+import FG_LearningProject from "./Fresh Graduate's POV/pages/FG_LearningProject";
+import FG_IndustryTrend from "./Fresh Graduate's POV/pages/FG_IndustryTrend";
 
 function App() {
   return (
     <Router>
-  
+    
       <FG_Navbar />
 
       <Routes>
