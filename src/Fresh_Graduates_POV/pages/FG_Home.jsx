@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/FG_Home.css";
 import Cards from "../components/FG_Home_ProjectCards";
+
 const FG_Home = () => {
   return (
     <div className="home-container">

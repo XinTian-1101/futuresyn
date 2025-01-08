@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/ProjectCards.css";
 
-
 const cardsData = [
   {
     category: "MySQL Database",

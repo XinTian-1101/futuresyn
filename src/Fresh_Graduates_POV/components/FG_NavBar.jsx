@@ -13,7 +13,7 @@ const FG_Navbar = () => {
   useEffect(() => {
     const determineActiveItem = () => {
       const path = location.pathname;
-      if (path.includes("/FG_learningProject")) {
+      if (path.includes("/FG_Home")) {
         return "Learning & Project";
       } else if (path.includes("/FG_IndustryTrend")) {
         return "Industry Trend";
@@ -51,7 +51,7 @@ const FG_Navbar = () => {
               <ul className={`nav-item ${activeItem === "Learning & Project" ? "active" : ""}`}>
                 <Link
                   className="nav-link"
-                  to="/FG_LearningProject"
+                  to="/FG_Home"
                   onClick={() => handleItemClick("Learning & Project")}>
                   Learning & Project
                 </Link>
