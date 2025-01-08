@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../Images/Logo.png";
-import FG_Narbar from "./FG_Home/FG_Narbar.css"
+import "../Fresh Graduate's POV/FG_Narbar.css"
 
 const FG_Navbar = () => {
   const location = useLocation();
@@ -30,7 +30,7 @@ const FG_Navbar = () => {
     <div className="navbarContainer">
       <nav className="navbar">
         <div className="navbar-brand">
-        <img src={Logo} alt="FutureSync Logo" width="150" height="130" />
+        <img src={Logo} alt="FutureSync Logo" width="300" height="200" />
         </div>
           <div className="navbar-links">
             <ul className={`nav-item ${activeItem === "Learning & Project" ? "active" : ""}`}>

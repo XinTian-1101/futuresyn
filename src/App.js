@@ -11,7 +11,7 @@ import FG_IndustryTrend from "./Fresh Graduate's POV/FG_IndustryTrend";
 function App() {
   return (
     <Router>
-    
+  
       <FG_Navbar />
 
       <Routes>
