@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import StaticTabs from "../components/StaticTabs";
 import ProjectCard from "../components/ProjectCard";
 import "../styles/EM_Home.css";
@@ -90,46 +91,70 @@ const EM_Home = () => {
             uploadedBy: "Dell Company",
             participants: "10 Participants",
         },
+        {
+            category: "Machine Learning",
+            title: "Image Classification with Convolutional Neural Networks",
+            description:
+                "Develop a machine learning model using Convolutional Neural Networks (CNNs) to classify product images into categories. This project involves pre-processing images, training the CNN model, and evaluating its performance on a test dataset.",
+            uploadedBy: "Dell Company",
+            participants: "15 Participants",
+        }
     ];
 
     const TabContent1 = () => (
         <div className="projectCardsContainer">
-            <ProjectCard projectData={cardsData[0]}/>
+            <ProjectCard projectData={cardsData[0]} status={"OPEN"} />
         </div>
     );
 
     const TabContent2 = () => (
-        <div>
-            <h2>Heading for Tab 2</h2>
-            <p>This is the content of Tab 2, rendered as a React component.</p>
+        <div className="projectCardsContainer">
+            <ProjectCard projectData={cardsData[1]} status={"INPROGRESS"} />
         </div>
     );
 
     const TabContent3 = () => (
-        <div>
-            <h2>Heading for Tab 3</h2>
-            <p>This is the content of Tab 3, rendered as a React component.</p>
+        <div className="projectCardsContainer">
+            <ProjectCard projectData={cardsData[2]} status={"JUDGING"} />
         </div>
     );
 
-    // const tabData = [
-    //     { title: "Enrollment Open", content: <TabContent1 /> },
-    //     { title: "In Progress", content: <TabContent2 /> },
-    //     { title: "Judging Required", content: <TabContent3 /> },
-    //     { title: "Certificates Pending", content: <TabContent4 /> },
-    //     { title: "Inactive", content: <TabContent5 /> },
-    // ];
+    const TabContent4 = () => (
+        <div className="projectCardsContainer">
+            <ProjectCard projectData={cardsData[3]} status={"CERT"} />
+        </div>
+    );
+
+    const TabContent5 = () => (
+        <div className="projectCardsContainer">
+            <ProjectCard projectData={cardsData[4]} status={"INACTIVE"} />
+        </div>
+    );
 
     const tabData = [
-        { title: "Tab 1", content: <TabContent1 /> },
-        { title: "Tab 2", content: <TabContent2 /> },
-        { title: "Tab 3", content: <TabContent3 /> },
+        { title: "Enrollment Open", content: <TabContent1 /> },
+        { title: "In Progress", content: <TabContent2 /> },
+        { title: "Judging Required", content: <TabContent3 /> },
+        { title: "Certificates Pending", content: <TabContent4 /> },
+        { title: "Inactive", content: <TabContent5 /> },
     ];
 
+    const nav = useNavigate();
+
+    const handleSubmit = () => {
+        nav('/EM_AddForm');
+    };
+
     return (
-        <div>
-            <h1>Welcome to the E_Home Page</h1>
+        <div className="emHomeContainer">
             <StaticTabs tabs={tabData} />
+            <div className="addButtonContainer">
+                <button
+                    className="view-button"
+                    onClick={handleSubmit}>
+                    +
+                </button>
+            </div>
         </div>
     );
 };

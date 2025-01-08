@@ -274,7 +274,7 @@ const EM_AddForm = () => {
                 <div className="righButtonContainer">
                     <button
                         className="view-button"
-                        onClick={handleSubmit()}>
+                        onClick={handleSubmit}>
                         Submit
                     </button>
                 </div>

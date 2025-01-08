@@ -25,11 +25,12 @@
     text-align: center;
     background-color: #D9D9D9;
     color: #000000;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .tab-title.active {
-    background-color: #F5F6FA;;
+    background-color: #F5F6FA;
+    font-weight: bold;
 }
 
 .tab-title:hover {

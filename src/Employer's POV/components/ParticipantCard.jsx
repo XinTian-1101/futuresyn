@@ -1,7 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/ParticipantCard.css";
 
 const ParticipantCard = ({a,b,c,d}) => {
+
+    const nav = useNavigate();
+    
+    const handleViewClick = () => {
+        nav('/EM_ViewParticipants');
+    };
+
     return (
         <div className="card">
             <div className="card-category">{a}</div>
@@ -9,7 +17,7 @@ const ParticipantCard = ({a,b,c,d}) => {
             <p className="card-description">{c}</p>
             <div className="card-footer">
                 <span>{d}</span>
-                <button className="view-button">Review</button>
+                <button className="view-button" onClick={handleViewClick}>Review</button>
             </div>
         </div>
     );

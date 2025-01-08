@@ -1,7 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/ProjectCard.css";
 
-const ProjectCard = ({ projectData }) => {
+const ProjectCard = ({ projectData, status }) => {
+
+    const nav = useNavigate();
+
+    const handleViewClick = () => {
+        console.log("nav")
+        nav(`/EM_ViewProject/${1}`);
+    };
+
     return (
         <div className="card">
             <div className="card-category">{projectData.category}</div>
@@ -9,7 +18,7 @@ const ProjectCard = ({ projectData }) => {
             <p className="card-description">{projectData.description}</p>
             <div className="card-footer">
                 <span>{projectData.participants}</span>
-                <button className="view-button">View</button>
+                <button className="view-button" onClick={handleViewClick}>View</button>
             </div>
         </div>
     );
