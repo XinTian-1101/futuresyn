@@ -5,15 +5,22 @@ import "../styles/Navbar.css";
 
 const FG_Navbar = () => {
   const location = useLocation();
-  const [activeItem, setActiveItem] = useState("Learning & Project");
+  const [activeItem, setActiveItem] = useState("");
+  const [dropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
     const determineActiveItem = () => {
       const path = location.pathname;
       if (path === "/FG_IndustryTrend") {
         return "Industry Trend";
-      } else if (path === "/FG_Home") {
-        return "Home";
+      } else if (path === "/FG_Available") {
+        return "Available";
+      } else if (path === "/FG_Completed") {
+        return "Completed";
+      } else if (path === "/FG_InProgress") {
+        return "In-Progress";
+      } else if (path === "/FG_Workshop") {
+        return "Workshop";
       }
       return "";
     };
@@ -23,6 +30,15 @@ const FG_Navbar = () => {
 
   const handleItemClick = (itemName) => {
     setActiveItem(itemName);
+    setDropdownVisible(false); // Close dropdown after clicking an item
+  };
+
+  const handleMouseEnter = () => {
+    setDropdownVisible(true); // Show dropdown on hover
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownVisible(false); // Hide dropdown when mouse leaves
   };
 
   return (
@@ -31,34 +47,68 @@ const FG_Navbar = () => {
         <div className="navbar-brand">
           <img src={Logo} alt="FutureSync Logo" width="150" height="130" />
         </div>
+
         <div className="navbar-links">
-          <ul className={`nav-item ${activeItem === "Home" ? "active" : ""}`}>
-            <Link
-              className="nav-link"
-              to="/FG_Home"
-              onClick={() => handleItemClick("Home")}
-            >
-              Home
-            </Link>
+          <ul
+            className={`nav-item ${
+              activeItem === "Learning & Project" ? "active" : ""
+            }`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="nav-link">Learning & Project</div>
+            {dropdownVisible && (
+              <div className="dropdown-menu">
+                <Link
+                  to="/FG_Available"
+                  className="dropdown-item"
+                  onClick={() => handleItemClick("Available")}
+                >
+                  Available
+                </Link>
+                <Link
+                  to="/FG_InProgress"
+                  className="dropdown-item"
+                  onClick={() => handleItemClick("In-Progress")}
+                >
+                  In-Progress
+                </Link>
+                <Link
+                  to="/FG_Completed"
+                  className="dropdown-item"
+                  onClick={() => handleItemClick("Completed")}
+                >
+                  Completed
+                </Link>
+              </div>
+            )}
           </ul>
 
-          <ul className={`nav-item ${activeItem === "Learning & Project" ? "active" : ""}`}>
-            <Link
-              className="nav-link"
-              to="/FG_LearningProject"
-              onClick={() => handleItemClick("Learning & Project")}
-            >
-              Learning & Project
-            </Link>
-          </ul>
-
-          <ul className={`nav-item ${activeItem === "Industry Trend" ? "active" : ""}`}>
+          <ul
+            className={`nav-item ${
+              activeItem === "Industry Trend" ? "active" : ""
+            }`}
+          >
             <Link
               className="nav-link"
               to="/FG_IndustryTrend"
               onClick={() => handleItemClick("Industry Trend")}
             >
               Industry Trend
+            </Link>
+          </ul>
+
+          <ul
+            className={`nav-item ${
+              activeItem === "Workshop" ? "active" : ""
+            }`}
+          >
+            <Link
+              className="nav-link"
+              to="/FG_Workshop"
+              onClick={() => handleItemClick("Workshop")}
+            >
+              Workshop
             </Link>
           </ul>
         </div>

@@ -1,0 +1,133 @@
+/* Container Styling */
+.upload-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .upload-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+  }
+  
+  .upload-subtitle {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Phase Tabs */
+  .phase-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .phase-tab {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .phase-tab:hover {
+    background-color: #d0d0d0;
+  }
+  
+  .active-phase {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Upload Box */
+  .upload-box {
+    background-color: #e9f3ff;
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .upload-icon {
+    font-size: 40px;
+    color: #f89c44;
+    margin-bottom: 10px;
+  }
+  
+  .upload-heading {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .upload-link {
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .upload-link:hover {
+    color: #0056b3;
+  }
+  
+  /* File Display */
+  .file-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .file-icon {
+    font-size: 36px;
+    color: #007bff;
+  }
+  
+  .file-name {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Upload Footer */
+  .upload-footer {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .upload-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .upload-button:hover {
+    background-color: #0056b3;
+  }
+  

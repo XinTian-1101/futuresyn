@@ -41,7 +41,7 @@ const cardsData = [
   },
 ];
 
-const Cards = () => {
+const FG_Available = () => {
   const navigate = useNavigate();
 
   const GoToProjectDetails = (id) => {
@@ -56,8 +56,8 @@ const Cards = () => {
           <h2 className="card-title">{card.title}</h2>
           <p className="card-description">{card.description}</p>
           <p className="card-uploaded-by">Uploaded By {card.uploadedBy}</p>
+          <p className="card-participants">{card.participants}</p>
           <div className="card-footer">
-            <span>{card.participants}</span>
             <button
               className="view-button"
               onClick={() => GoToProjectDetails(card.id)}
@@ -71,4 +71,5 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default FG_Available;
+

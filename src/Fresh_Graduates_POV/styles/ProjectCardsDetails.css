@@ -1,0 +1,36 @@
+/* SweetAlert Custom Styling */
+.swal-popup {
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+  }
+  
+  .swal-confirm-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .swal-confirm-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .swal-cancel-button {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .swal-cancel-button:hover {
+    background-color: #aaa;
+  }
+  
