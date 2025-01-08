@@ -1,15 +1,14 @@
 import React from "react";
 import "../styles/ProjectCard.css";
 
-const ProjectCard = (category, title, description, uploadedBy, participants) => {
+const ProjectCard = ({ projectData }) => {
     return (
         <div className="card">
-            <div className="card-category">{category}</div>
-            <h2 className="card-title">{title}</h2>
-            <p className="card-description">{description}</p>
-            <p className="card-uploaded-by">Uploaded By {uploadedBy}</p>
+            <div className="card-category">{projectData.category}</div>
+            <h2 className="card-title">{projectData.title}</h2>
+            <p className="card-description">{projectData.description}</p>
             <div className="card-footer">
-                <span>{participants}</span>
+                <span>{projectData.participants}</span>
                 <button className="view-button">View</button>
             </div>
         </div>
